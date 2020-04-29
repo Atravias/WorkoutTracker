@@ -1,4 +1,5 @@
 var express = require("express");
+const mongoose = require("mongoose");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
@@ -6,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'))
 
-let mongoose = require("mongoose");
+
 mongoose.connect("mongodb://localhost/workout", {
     useNewUrlParser: true,
     useFindAndModify: false
